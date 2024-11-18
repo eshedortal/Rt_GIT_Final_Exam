@@ -1,0 +1,26 @@
+name: Git-FinalEx
+env:
+  UBUNTU_VERSION: $(lsb_release -rs)
+  MY_APP_SHA: MyApp-version-${{ github.sha }}
+on:
+  push:
+    branches: [main]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello
+        run: echo "Hello World"
+      - name: Print Version of Ubuntu
+        run: echo "This machine is running :${{ UBUNTU_VERSION }}
+      - name: Print SHA
+        run: echo "my application version is :$ {{ MY_APP_SHA }}
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print all files in Repo
+        run: ls -la | cat ./*
+      - name: Run test file
+        run: ./test.sh
