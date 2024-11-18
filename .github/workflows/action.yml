@@ -21,6 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print all files in Repo
-        run: ls -la
+        run: ls -la ../*
       - name: Run test file
-        run: ./test.sh
+        run: .././test.sh
