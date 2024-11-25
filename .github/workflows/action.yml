@@ -44,6 +44,6 @@ jobs:
       - name: Print Last Name
         run: |
           LAST_NAME=Ortal
-          echo "Last Name = ${{ LAST_NAME }}
+          echo "Last Name = $LAST_NAME
           
         
