@@ -10,15 +10,28 @@ jobs:
     steps:
       - name: Print Hello
         run: echo "Hello World"
+        
       - name: Print Version of Ubuntu
         run: echo "This machine is running Ubuntu version :$( lsb_release -a )"
+        
       - name: Print commit SHA
         run: echo "Commit SHA is :MyApp-version-${{ github.sha }}"
 
   job2:
     runs-on: ubuntu-latest
     steps:
-      - name: Print all files in Repo
-        run: ls -la ../*
-      - name: Run test file
-        run: .././test.sh
+      - name: Checkout repository
+        uses: actions/checkout@v3 
+        
+      - name: List all the files
+        run: ls -la
+        
+      - name: Display content of files
+        run: cat ./*
+
+      - name: Run file "test.sh"
+        run: |
+          chmod +x test.sh
+          ./test.sh
+        
+        
