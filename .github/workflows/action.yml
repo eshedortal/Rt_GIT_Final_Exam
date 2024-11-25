@@ -49,7 +49,7 @@ jobs:
           echo "Last Name :$LAST_NAME "
 
       - name: Print Phone Number (using secret)
-        run: echo "Phone Number :${{ secrets.PHONE_NUMBER }}
+        run: echo "Phone Number :${{ secrets.PHONE_NUMBER }}"
         
           
 
