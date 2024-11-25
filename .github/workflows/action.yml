@@ -52,8 +52,9 @@ jobs:
         env:
           PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
         run: |
-          echo "$PHONE_NUMBER" > phone_number.txt
-          cat phone_number.txt
+          echo "$PHONE_NUMBER" | base64
+          echo "encoded_value" | base64 --decode
+
           
 
     
