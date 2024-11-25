@@ -49,12 +49,8 @@ jobs:
           echo "Last Name :$LAST_NAME "
 
       - name: Print Phone Number (using secret)
-        env:
-          PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
-        run: |
-          echo "$PHONE_NUMBER" | base64
-          echo "encoded_value" | base64 --decode
-
+        run: echo "Phone Number :${{ secrets.PHONE_NUMBER }}
+        
           
 
     
