@@ -1,6 +1,4 @@
 name: Git-FinalEx
-env:
-  UBUNTU_VERSION: $( lsb_release -a)
   
 on:
   push:
@@ -13,7 +11,7 @@ jobs:
       - name: Print Hello
         run: echo "Hello World"
       - name: Print Version of Ubuntu
-        run: echo "This machine is running Ubuntu version :${{ env.UBUNTU_VERSION }}"
+        run: echo "This machine is running Ubuntu version :${{ lsb_release -a }}"
       - name: Print commit SHA
         run: echo "Commit SHA is :MyApp-version-${{ github.sha }}"
 
