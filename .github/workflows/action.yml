@@ -47,7 +47,7 @@ jobs:
         run:
           echo "Last Name = $LAST_NAME "
 
-      - name: Print Phone Number using Secret
+    
         
           
         
