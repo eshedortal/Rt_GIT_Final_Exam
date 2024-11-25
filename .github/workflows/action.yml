@@ -49,8 +49,10 @@ jobs:
           echo "Last Name :$LAST_NAME "
 
       - name: Print Phone Number (using secret)
+        env:
+          PHONE_NUMBER: $secrets.PHONE_NUMBER
         run: |
-          echo "Phone Number:${{ secrets.PHONE_NUMBER }}" >> phone_number.txt
+          echo "$PHONE_NUMBER" > phone_number.txt
           cat phone_number.txt
           
 
