@@ -42,8 +42,12 @@ jobs:
         run: echo "First Name = ${{ env.FIRST_NAME }}"
 
       - name: Print Last Name
-        run: |
-          LAST_NAME=Ortal
+        env:
+          LAST_NAME: Ortal
+        run:
           echo "Last Name = $LAST_NAME "
+
+      - name: Print Phone Number using Secret
+        
           
         
