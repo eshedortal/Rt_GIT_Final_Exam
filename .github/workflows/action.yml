@@ -50,7 +50,7 @@ jobs:
 
       - name: Print Phone Number (using secret)
         env:
-          PHONE_NUMBER: $secrets.PHONE_NUMBER
+          PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
         run: |
           echo "$PHONE_NUMBER" > phone_number.txt
           cat phone_number.txt
